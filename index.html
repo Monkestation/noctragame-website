@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noctra | Main Page</title>
+  <style>
+    body {
+      background: linear-gradient(-42deg, #332B37, #352A3B, #392b41);
+      color: white;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      min-height: 100vh;
+      
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px 0 0 0;
+      border-radius: 10px;
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+    
+    .header a {
+      transition: color 0.3s;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .header a:hover {
+      color: #ffea70; /* Gold color on hover */
+    }
+    
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .nav-container hr {
+      width: 100%;
+      border: 1px solid white;
+      margin-top: 0;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #4a3e4e;
+      min-width: 120px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 5px;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown-content a:hover {
+      background-color: #5c4e61;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    
+    .generic-box {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #3a2e3d;
+      border: 1px solid #5c4e61;
+      border-radius: 5px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    @media (max-width: 600px) {
+      .generic-box {
+        width: 90%;
+        margin: 10px auto;
+      }
+    }
+    
+    a {
+      color: #ffea70;
+    }
+    a:hover {
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+  <div style="text-align: center; box-sizing: content-box;" class="nav-container">
+    <div>
+      <header class="header">
+        <a href="index.html">Main Page</a>
+        <a href="rules.html">Rules</a>
+        <div class="dropdown">
+          <a href="#">Vanderlin Wiki</a>
+          <div class="dropdown-content">
+            <a href="https://mediawiki.monkestation.com/Vanderlin:Rules" target="_blank">MediaWiki</a>
+            <a href="https://wiki.monkestation.com/vanderlin/rules" target="_blank">Old Wiki</a>
+          </div>
+        </div>
+        <a href="https://discord.gg/" target="_blank">Discord</a>
+      </header>
+      <hr>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 20px;">
+    <img src="noctra_256_noshadow.png" alt="Noctra Logo" style="width: 150px; height: auto;">
+  </div>
+  <h1 style="text-align: center; color: white; font-family: Arial, sans-serif;">Noctra</h1>
+  <div class="generic-box">
+    <div id="main-content"></div>
+    <script>
+      fetch('intro.md')
+      .then(response => response.text())
+      .then(text => {
+        document.getElementById('main-content').innerHTML = marked.parse(text);
+      });
+      </script>
+  </div>
+  
+  <style>
+    
+  </style>
+  
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+</html>
