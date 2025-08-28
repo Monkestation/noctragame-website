@@ -26,7 +26,9 @@
    <meta name="theme-color" content="#352A3B">
   <style>
     body {
-      background: linear-gradient(-42deg, #332B37, #352A3B, #392b41);
+      /* background: linear-gradient(-42deg, #332B37, #352A3B, #392b41); */
+      /* background: url("./good_background_definitely_not_furry_porn.png") no-repeat center center fixed; */
+      /* background-size: cover; */
       color: white;
       margin: 0;
       padding: 0;
@@ -110,6 +112,11 @@
       border-radius: 5px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
+    .generic-box:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
     @media (max-width: 600px) {
       .generic-box {
         width: 90%;
@@ -123,6 +130,20 @@
     a:hover {
       color: #ffd700;
     }
+
+    #logo {
+      filter: drop-shadow(0 0 10px white);
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      image-rendering: pixelated;
+    }
+
+    .footer-disclaimer {
+      font-size: 0.8rem;
+      color: #666;
+      text-align: center;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -130,7 +151,7 @@
     <div>
       <header class="header">
         <a href="index.html">Main Page</a>
-        <a href="rules.html">Rules</a>
+        <a href="#rules">Rules</a>
         <div class="dropdown">
           <a href="#">Vanderlin Wiki</a>
           <div class="dropdown-content">
@@ -139,29 +160,159 @@
           </div>
         </div>
         <a href="https://discord.gg/" target="_blank">Discord</a>
+        <a href="https://github.com/Monkestation/Noctra" target="_blank">Github</a>
       </header>
       <hr>
     </div>
   </div>
   <div style="text-align: center; margin-top: 20px;">
-    <img src="noctra_256_noshadow.png" alt="Noctra Logo" style="width: 150px; height: auto;">
+    <img id="logo" src="noctra_256_noshadow.png" alt="Noctra Logo" style="height: 192px;">
+    <!-- <img id="logo" src="/funnylogoheader.png" alt="Noctra Logo" style="height: 288px;"> -->
   </div>
   <h1 style="text-align: center; color: white; font-family: Arial, sans-serif;">Noctra</h1>
   <div class="generic-box">
-    <div id="main-content"></div>
-    <script>
-      fetch('intro.md')
-      .then(response => response.text())
-      .then(text => {
-        document.getElementById('main-content').innerHTML = marked.parse(text);
+    <div id="main-content" style="white-space: pre-wrap">
+# Welcome to Noctra
+
+Noctra is an upcoming dark medieval fantasy ERP server, based on [Vanderlin](https://github.com/Monkestation/Vanderlin/) code, hosted on BYOND.
+
+This website is still being worked on, but should serve as a basic homepage for the server.
+
+    </div>
+    <script defer>
+      window.addEventListener('load', () => {
+        const el = document.getElementById("main-content");
+        el.innerHTML = marked.parse(el.innerHTML);
+        el.style.setProperty("white-space", null)
       });
-      </script>
+    </script>
   </div>
+  <div class="generic-box" id="rules">
+    <div id="rules-content" style="white-space: pre-wrap">
+# Rules
+
+  This is an 18+ server. No exceptions.  
+  We are US-based and follow US Federal Law and its moral guidelines.  
+  These rules exist to keep the community fair, fun, and immersive. Read them.  
+  You are to expected to follow the spirit of the rules along with it's wording.  
+  <small style="color: #85778a">These rules are partially based on [Vanderlin rules](https://mediawiki.monkestation.com/Vanderlin:Rules).</small>
+
+## Rule 0: Don’t Be a Dick
+- Admins have the final say. Cross this at your own peril.
+- Hostility toward staff in tickets = removal from the community.
+- Don’t bully new players or gatekeep with mechanics knowledge. Help, don’t harass.
+- Antag rerolling is not allowed, play the hand you’re dealt.
+- Don’t camp/grab people at map transition zones. Give them breathing room.  
+- Don’t bait bans, misrepresent situations, or target players in bad faith.
+- Do not alter or mess with SSD players or steal from them, if you must interact with them to save their life or take them out of immediate harm you may do so.
+
+## Rule 0.1: Player Conduct
+- Treat players with OOC respect (you can be IC mean, but not OOC toxic).
+- LOOC: use it only for quick OOC quips or mechanics clarification, not venting, rule complaints, or conversations.  
+- Metacomms (using outside comms for advantage) = instant punishment.  
+- Make a reasonable effort to engage with the job you have selected, especially if it is a job that has limited availability. You should not pick a job and run off roundstart.
+- Slurs are zero tolerance. No “exceptions” and no letter-swapping.
+- Noctra is not about “winning.” You will die. Embrace failure as RP.  
+
+## Rule 0.2: Species Clause
+- Some species (kobolds, hollowkin, etc.) are discriminated against IC. By playing them, you accept an experience that may be hostile in character.
+- Don’t ahelp being discriminated against if you willingly choose a species marked for it. It's a skill issue.
+
+## Rule 1: Roleplay is Mandatory
+- Remain IC at all times. Be able to explain your character’s motives, especially for violence.
+- Combat requires escalation. You must make a reasonable effort to convey the idea you are about to attack someone.
+- Strict escalation is required in towns and settled areas. Relaxed escalation is only in dungeons and wilderness zones (Murder Wood, Terrorbog, Malum’s Anvil).
+- Expect conflict in unsafe zones. Non-combat roles: hire protection. If you die because you are a farmer in a dungeon it's a skill issue.
+
+## Rule 1.1: Act in Good Faith
+- Engage with the setting and characters as they are. Don’t play to “win.”
+- Report poor RP or rulebreaking via ahelp. Admins need your input to act.
+- The lore has nuance to it, please don't take anything at face value. If the Non ERP server can be mature about the lore, so can you.
+
+## Rule 1.2: Death Clause
+- After revival, you lose memory of the last day/night cycle (≈30 minutes). You may remember the circumstances of your death but not exact details (names/places). Ghosts are canon, maintain character consistency even post-death.
+
+## Rule 2: No IRL Bigotry, IC Prejudice Is Different
+- This is a dark fantasy setting. Expect IC conflict, distrust, and prejudice.
+- Discrimination IC is valid, but excessive OOC toxicity is forbidden.
+- Sexism and homophobia are heresy in-lore and will have IC consequences.
+- Species choice ≠ auto-escalation to murder or bans from establishments. Don’t roundstart outlaw entire species.
+- Out-of-character hate speech = permanent removal. Nazis and supremacists are not welcome here.
+
+## Rule 3: Conflict & Antagonism
+- “Self-antagging” doesn’t exist. Conflict is natural and encouraged.
+- Escalation must still be meaningful. No shallow “I kill you now” motives.
+- Antags must still roleplay. Antagonist tools are story-building, not excuses for grief.
+- Sleep Clause: Theft, murder, and kidnapping can happen if you’re asleep. Sleep at your own risk.
+
+## Rule 4: General Standards
+- No griefing (spam, bug abuse, unwanted harassment, sabotaging without approval).
+- No metagaming or metagrudging. Past rounds are canon, but antagonists are anonymized.
+- Don’t impersonate other characters/players.
+- Your actions have consequences, attempt to engage with the consequences of your actions in good faith. If you are caught stealing and are put in jail, killing yourself is an over reaction.
+- No underaged characters, period.
+
+## Rule 5: ERP Standards
+- Any form of forced, coerced, or implied non-consentual sex is strictly prohibited. No "grey area" or loophole roleplay will be tolerated. The furthest acceptable scenario is a non-sexual context of involuntary labor (e.g., a prisoner mining), but never in a sexual or exploitative sense. Do not violate another player’s consent in any sexual fashion.
+
+- Consent is ongoing and can be revoked at any time, you are encouraged to LOOC to stop a scene if needed, and are doubly encouraged to ahelp if your partner does not respect it.
+
+- Any form of ageplay is absolutely forbidden. This includes but is not limited to: characters portrayed as minors, regression roleplay, or scenarios that attempt to bypass the rule through implication or vague wording. Any character, appearance, or behavior that suggests underage involvement in sexual or romantic contexts is not allowed under any circumstance.
+
+- If a mob, creature, or entity cannot be legitimately created through the in-game character sheet it cannot be used for ERP. This includes mobs such as the werewolf, bog troll, or animals. If it is not player controlled and not able to be made in the character sheet it is off the table. 
+
+- Erotic roleplay with NPCs is not permitted under any circumstance. This includes directly roleplaying sexual encounters with NPCs, describing NPCs as sexual participants, or attempting to exploit the presence of non-player entities in an erotic context. NPCs exist strictly for gameplay and narrative purposes, never for ERP.
+
+- Participating in ERP is not metaprotected. If you ERP on the server you willingly put yourself in a compromised position. If someone wants to break in and steal from you, they have caught you with your pants down. Literally. Do not be a dick still applies, and players should have a reason to intervene on a scene. Extreme or niche fetishes must be written with the subtle anti ghost verb.
+
+- The following ERP fetishes are banned, this is nothing personal. This is to protect the staff team who must review logs:
+  - Non-con
+  - Bestiality
+  - Necrophelia
+  - Ageplay
+  - Scat/Watersports
+  - Gore
+    </div>
+    <script defer>
+      window.addEventListener('load', () => {
+        const el = document.getElementById('rules-content');
+        el.innerHTML = marked.parse(el.innerHTML);
+        el.style.setProperty("white-space", null);
+      });
+    </script>
+  </div>
+
+  <p class="footer-disclaimer">
+    This server is hosted on Monkestation infrastructure but is entirely independent and not affiliated with Monkestation.
+  </p>
   
+  <canvas id="backgroundCanvas">
+  </canvas>
   <style>
-    
+    #backgroundCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      image-rendering: pixelated;
+    }
   </style>
-  
+  <script src="/bg.js"></script>
+  <script> 
+    window.addEventListener('load', () => {
+      if (window.backgroundContext) {
+        window.backgroundContext.startColor = "#774B90";
+        window.backgroundContext.endColor = "#331935";
+        window.backgroundContext.gradientAngle = 90;
+        window.backgroundContext.numColors = 4;
+        window.backgroundContext.scale = 3;
+      }
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>
