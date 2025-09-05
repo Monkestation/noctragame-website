@@ -1,0 +1,130 @@
+body {
+  /* background: linear-gradient(-42deg, #332B37, #352A3B, #392b41); */
+  /* background: url("./good_background_definitely_not_furry_porn.png") no-repeat center center fixed; */
+  /* background-size: cover; */
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0 0 0;
+  border-radius: 10px;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header a {
+  transition: color 0.3s;
+  color: white;
+  text-decoration: none;
+}
+
+.header a:hover {
+  color: #ffea70;
+  /* Gold color on hover */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-container hr {
+  width: 100%;
+  border: 1px solid white;
+  margin-top: 0;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #4a3e4e;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #5c4e61;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.generic-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #3a2e3d;
+  border: 1px solid #5c4e61;
+  border-radius: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.generic-box:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .generic-box {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+a {
+  color: #ffea70;
+}
+
+a:hover {
+  color: #ffd700;
+}
+
+.header .here {
+  color: #f38ef7;
+}
+
+#logo {
+  filter: drop-shadow(0 0 10px white);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+.footer-disclaimer {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+  margin-top: 2rem;
+}

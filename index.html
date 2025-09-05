@@ -24,133 +24,15 @@
   <meta name="twitter:image" content="/header.png">
   <!-- theme color for discord  embed -->
    <meta name="theme-color" content="#352A3B">
-  <style>
-    body {
-      /* background: linear-gradient(-42deg, #332B37, #352A3B, #392b41); */
-      /* background: url("./good_background_definitely_not_furry_porn.png") no-repeat center center fixed; */
-      /* background-size: cover; */
-      color: white;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      min-height: 100vh;
-      
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    
-    .header {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px 0 0 0;
-      border-radius: 10px;
-      margin: 20px;
-      font-family: Arial, sans-serif;
-    }
-    
-    .header a {
-      transition: color 0.3s;
-      color: white;
-      text-decoration: none;
-    }
-    
-    .header a:hover {
-      color: #ffea70; /* Gold color on hover */
-    }
-    
-    .nav-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .nav-container hr {
-      width: 100%;
-      border: 1px solid white;
-      margin-top: 0;
-    }
-    
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #4a3e4e;
-      min-width: 120px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 5px;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-    }
-    .dropdown-content a {
-      color: white;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-    }
-    .dropdown-content a:hover {
-      background-color: #5c4e61;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    
-    
-    .generic-box {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #3a2e3d;
-      border: 1px solid #5c4e61;
-      border-radius: 5px;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    .generic-box:not(:last-child) {
-      margin-bottom: 20px;
-    }
-
-    @media (max-width: 600px) {
-      .generic-box {
-        width: 90%;
-        margin: 10px auto;
-      }
-    }
-    
-    a {
-      color: #ffea70;
-    }
-    a:hover {
-      color: #ffd700;
-    }
-
-    #logo {
-      filter: drop-shadow(0 0 10px white);
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
-      image-rendering: pixelated;
-    }
-
-    .footer-disclaimer {
-      font-size: 0.8rem;
-      color: #666;
-      text-align: center;
-      margin-top: 2rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div style="text-align: center; box-sizing: content-box;" class="nav-container">
     <div>
       <header class="header">
-        <a href="index.html">Main Page</a>
+        <a href="index.html" class="here">Main Page</a>
+        |
+        <a href="https://hub.noctragame.com">Game Hub</a>
         <a href="#rules">Rules</a>
         <div class="dropdown">
           <a href="#">Vanderlin Wiki</a>
@@ -302,17 +184,6 @@ This website is still being worked on, but should serve as a basic homepage for 
     }
   </style>
   <script src="/bg.js"></script>
-  <script> 
-    window.addEventListener('load', () => {
-      if (window.backgroundContext) {
-        window.backgroundContext.startColor = "#774B90";
-        window.backgroundContext.endColor = "#331935";
-        window.backgroundContext.gradientAngle = 90;
-        window.backgroundContext.numColors = 4;
-        window.backgroundContext.scale = 3;
-      }
-    });
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>

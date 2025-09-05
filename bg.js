@@ -1,3 +1,4 @@
+
 function hexToRgb(hex) {
   const bigint = parseInt(hex.replace("#", ""), 16);
   const r = (bigint >> 16) & 255;
@@ -61,8 +62,8 @@ window.backgroundContext = {
 
   set scale(value) {
     this._scale = value;
-    this.redraw()
-  }
+    this.redraw();
+  },
 };
 window.onload = function () {
   const canvas = document.getElementById("backgroundCanvas");
@@ -75,7 +76,13 @@ window.onload = function () {
   ];
   const matrixSize = bayerMatrix.length;
 
-  function drawDitheredGradient(startColor, endColor, angleDeg, numColors, scale = 4) {
+  function drawDitheredGradient(
+    startColor,
+    endColor,
+    angleDeg,
+    numColors,
+    scale = 4
+  ) {
     const internalWidth = Math.floor(canvas.offsetWidth / scale);
     const internalHeight = Math.floor(canvas.offsetHeight / scale);
     canvas.width = internalWidth;
@@ -148,3 +155,13 @@ window.onload = function () {
   window.backgroundContext.redraw = redraw;
   window.addEventListener("resize", redraw);
 };
+
+window.addEventListener("load", () => {
+  if (window.backgroundContext) {
+    window.backgroundContext.startColor = "#774B90";
+    window.backgroundContext.endColor = "#331935";
+    window.backgroundContext.gradientAngle = 90;
+    window.backgroundContext.numColors = 4;
+    window.backgroundContext.scale = 3;
+  }
+});
